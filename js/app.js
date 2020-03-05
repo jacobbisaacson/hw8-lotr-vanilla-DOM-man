@@ -76,8 +76,9 @@ function makeHobbits() {
   console.log("2: makeHobbits");
 
   // display an `unordered list` of hobbits in the shire
-
   const hobbitsList = document.createElement('ul')
+  hobbitsList.id = "list-of-hobbits"
+  // hobbitList.classList.add("hobbits")
   const theShire = document.getElementById('The-Shire')
   theShire.appendChild(hobbitsList)
 
@@ -85,7 +86,8 @@ function makeHobbits() {
 
   for(let i = 0; i < hobbits.length; i++) {
     const hobbitsNames = document.createElement('li')
-    hobbitsNames.textContent = hobbits[i]
+    hobbitsNames.classList.add('hobbit')
+    hobbitsNames.innerText = hobbits[i]
     hobbitsList.appendChild(hobbitsNames)
   }
   // hint: create a 'ul' outside the loop into which to append the 'li's
@@ -104,8 +106,13 @@ function keepItSecretKeepItSafe() {
   console.log("3: keepItSecretKeepItSafe");
 
   // create a div with an id of `'the-ring'`
-
+  const theRingDiv = document.createElement('div')
+  theRingDiv.id = "the-ring"
   // give the div a class of `'magic-imbued-jewelry'`
+  theRingDiv.classList.add("magic-imbued-jewelry")
+  document.getElementById("list-of-hobbits").firstChild.appendChild(theRingDiv); 
+  //https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild (((ABOUT FIRST CHILD)))
+  // the ring is showing in div id under frodo (last one makes new div for frodo outside of hobbits)
 
   // add the ring as a child of `Frodo`
 
@@ -122,12 +129,20 @@ function keepItSecretKeepItSafe() {
 function makeBaddies() { 
   console.log("4: makeBaddies");
 
+  const makeBaddiesList = document.createElement('ul');
+  makeBaddiesList.id = "list-of-baddies";
   // display an unordered list of baddies in Mordor
-
+  for(let i = 0; i < baddies.length; i++) {
+    let baddies = document.createElement('li')
+    baddies.classList.add("baddy")
   // give each of the baddies a class of "baddy"
+    baddies.innerText = baddies[i]
+    makeBaddiesList.appendChild(baddies);
+    document.getElementById('Mordor').appendChild(makeBaddiesList);
 
   // remember to append them to Mordor
 
+  }
 }
 
 // COMMIT YOUR WORK
@@ -141,10 +156,18 @@ function makeBaddies() {
 function makeBuddies () { 
   console.log("5: makeBuddies");
 
+  const makeAsideTag = document.createElement('aside')
   // create an `aside` tag
-   
+  const buddiesList = document.createElement('ul')
   // put an `unordered list` of the `'buddies'` in the aside
-   
+  buddiesList.id = "buddies-list"
+  for(let i = 0; i < buddies.length; i++) {
+    let buddies = document.createElement('li')
+    buddies.innerText = buddies[i]
+    buddiesList.appendChild(buddies)
+  }
+  makeAsideTag.appendChild(buddiesList)
+  document.getElementById('Rivendell').appendChild(makeAsideTag) // this is all same as the last one basically
   // insert your aside as a child element of `rivendell`
 
 }

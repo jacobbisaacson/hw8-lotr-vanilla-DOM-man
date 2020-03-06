@@ -202,9 +202,65 @@ function leaveTheShire() {
 
 function beautifulStranger() { 
   console.log("7: beautifulStranger");
+// get strider, 
+const getStriderInRivendell = document.getElementsByTagName('li')[3].textContent = "aragorn" //becasue he;s in rivendell
+// const getStridersIndexNumber = document.querySelectorAll(getStriderInRivendell)
+// getStridersIndexNumber[3].textContent = "aragorn"
+// getStriderInRivendell[3].textContent = "aragorn"
+console.log(getStriderInRivendell);
 
+
+
+// const elementsWithShoeClass = document.querySelectorAll('.shoe')
+// console.log(elementsWithShoeClass);
+// // AGAIN -- any css selector will work in this method
+// const shoeDivs = document.querySelectorAll('div.shoe')
+// console.log(shoeDivs);
+
+// note: querySelectorAll returns a "node list" NodeList -- same thing as before, it's an ARRAY-like obhject
+// but it often live-updates (i.e. automatically changes when you modify its elements with other code)
+// if you use querySelectorAll on some selector (from css) that only appears once, you STILL get a node list
+
+
+
+
+
+
+//   /// make an ID for strider and aragorn (becuase li's) just like for buddies-list
+//   const buddiesNameChange = document.createElement('li')
+//   // put an `unordered list` of the `'buddies'` in the aside
+//   buddiesNameChange.id = "buddies-name-change-list"
+//   let Strider = document.getElementById('buddies-name-change-list').textContent;
+//   document.getElementById("buddies-name-change-list").textContent = "Aragorn";
+
+// got to get strider
+// then got to set a variable to it "aragon" to it
+
+
+  // const buddiesNameChange = document.getElementById('buddies-name-change')
+  // for(let i = 0; i < buddies.length; i++) {
+  //   if(i === "Strider") i === "Aragorn"
+  // }
+  // buddiesNameChange.appendChild(buddies)
   // change the `'Strider'` text to `'Aragorn'`
+  // make a new 
 }
+
+//Given this HTML fragment:
+
+// <div id="divA">This is <span>some</span> text!</div>
+// //you can use textContent to get the element's text content:
+
+// let text = document.getElementById('divA').textContent;
+// // The text variable is now: 'This is some text!'
+// // or set the element's text content:
+
+// document.getElementById('divA').textContent = 'This text is different!';
+// // The HTML for divA is now:
+// <div id="divA">This text is different!</div>
+
+
+
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 7 complete - Strider is changed to Aragorn"
@@ -214,6 +270,9 @@ function beautifulStranger() {
 // Chapter 8
 // ============
 
+
+
+// use console logs instead of alerts, then change them to alerts when submitting
 function forgeTheFellowShip() { 
   console.log("8: forgeTheFellowShip");
   // create a new div called `'the-fellowship'` within `rivendell`

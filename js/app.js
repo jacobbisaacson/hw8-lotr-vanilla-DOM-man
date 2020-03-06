@@ -187,7 +187,7 @@ function leaveTheShire() {
   console.log("6: leaveTheShire");
 
   const getHobbits = document.getElementById("list-of-hobbits")
-  Rivendale.appendChild(getHobbits)
+  Rivendell.appendChild(getHobbits)
 //buddies in there
   // assemble the `hobbits` and move them to `rivendell`
 }

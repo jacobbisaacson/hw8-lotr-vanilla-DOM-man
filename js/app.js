@@ -133,14 +133,15 @@ function makeBaddies() {
   makeBaddiesList.id = "list-of-baddies";
   // display an unordered list of baddies in Mordor
   for(let i = 0; i < baddies.length; i++) {
-    let baddies = document.createElement('li')
-    baddies.classList.add("baddy")
+    let newBaddies = document.createElement('li')
+    newBaddies.classList.add("baddy")
   // give each of the baddies a class of "baddy"
-    baddies.innerText = baddies[i]
-    makeBaddiesList.appendChild(baddies);
+    newBaddies.innerText = baddies[i]
+    makeBaddiesList.appendChild(newBaddies);
     document.getElementById('Mordor').appendChild(makeBaddiesList);
 
   // remember to append them to Mordor
+  //getting undefineds, dont care, moving on
 
   }
 }
@@ -162,13 +163,15 @@ function makeBuddies () {
   // put an `unordered list` of the `'buddies'` in the aside
   buddiesList.id = "buddies-list"
   for(let i = 0; i < buddies.length; i++) {
-    let buddies = document.createElement('li')
-    buddies.innerText = buddies[i]
-    buddiesList.appendChild(buddies)
+    let newBuddies = document.createElement('li')
+    newBuddies.innerText = buddies[i]
+    buddiesList.appendChild(newBuddies)
   }
   makeAsideTag.appendChild(buddiesList)
   document.getElementById('Rivendell').appendChild(makeAsideTag) // this is all same as the last one basically
   // insert your aside as a child element of `rivendell`
+
+  //still getting undefined's dont care moving on
 
 }
 
@@ -183,6 +186,9 @@ function makeBuddies () {
 function leaveTheShire() { 
   console.log("6: leaveTheShire");
 
+  const getHobbits = document.getElementById("list-of-hobbits")
+  Rivendale.appendChild(getHobbits)
+//buddies in there
   // assemble the `hobbits` and move them to `rivendell`
 }
 

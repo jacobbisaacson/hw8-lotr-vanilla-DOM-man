@@ -157,7 +157,7 @@ function makeBaddies() {
 function makeBuddies () { 
   console.log("5: makeBuddies");
 
-  const makeAsideTag = document.createElement('aside')
+  const rivendellLocation = document.createElement('aside')
   // create an `aside` tag
   const buddiesList = document.createElement('ul')
   // put an `unordered list` of the `'buddies'` in the aside
@@ -167,8 +167,8 @@ function makeBuddies () {
     newBuddies.innerText = buddies[i]
     buddiesList.appendChild(newBuddies)
   }
-  makeAsideTag.appendChild(buddiesList)
-  document.getElementById('Rivendell').appendChild(makeAsideTag) // this is all same as the last one basically
+  rivendellLocation.appendChild(buddiesList)
+  document.getElementById('Rivendell').appendChild(rivendellLocation) // this is all same as the last one basically
   // insert your aside as a child element of `rivendell`
 
   //still getting undefined's dont care moving on
@@ -187,7 +187,8 @@ function leaveTheShire() {
   console.log("6: leaveTheShire");
 
   const getHobbits = document.getElementById("list-of-hobbits")
-  Rivendell.appendChild(getHobbits)
+  const rivendellLocation = document.getElementById("Rivendell")
+  rivendellLocation.appendChild(getHobbits)
 //buddies in there
   // assemble the `hobbits` and move them to `rivendell`
 }
@@ -202,65 +203,13 @@ function leaveTheShire() {
 
 function beautifulStranger() { 
   console.log("7: beautifulStranger");
-// get strider, 
+
 const getStriderInRivendell = document.getElementsByTagName('li')[3].textContent = "aragorn" //becasue he;s in rivendell
-// const getStridersIndexNumber = document.querySelectorAll(getStriderInRivendell)
-// getStridersIndexNumber[3].textContent = "aragorn"
-// getStriderInRivendell[3].textContent = "aragorn"
+
 console.log(getStriderInRivendell);
+//significant timm help
 
-
-
-// const elementsWithShoeClass = document.querySelectorAll('.shoe')
-// console.log(elementsWithShoeClass);
-// // AGAIN -- any css selector will work in this method
-// const shoeDivs = document.querySelectorAll('div.shoe')
-// console.log(shoeDivs);
-
-// note: querySelectorAll returns a "node list" NodeList -- same thing as before, it's an ARRAY-like obhject
-// but it often live-updates (i.e. automatically changes when you modify its elements with other code)
-// if you use querySelectorAll on some selector (from css) that only appears once, you STILL get a node list
-
-
-
-
-
-
-//   /// make an ID for strider and aragorn (becuase li's) just like for buddies-list
-//   const buddiesNameChange = document.createElement('li')
-//   // put an `unordered list` of the `'buddies'` in the aside
-//   buddiesNameChange.id = "buddies-name-change-list"
-//   let Strider = document.getElementById('buddies-name-change-list').textContent;
-//   document.getElementById("buddies-name-change-list").textContent = "Aragorn";
-
-// got to get strider
-// then got to set a variable to it "aragon" to it
-
-
-  // const buddiesNameChange = document.getElementById('buddies-name-change')
-  // for(let i = 0; i < buddies.length; i++) {
-  //   if(i === "Strider") i === "Aragorn"
-  // }
-  // buddiesNameChange.appendChild(buddies)
-  // change the `'Strider'` text to `'Aragorn'`
-  // make a new 
 }
-
-//Given this HTML fragment:
-
-// <div id="divA">This is <span>some</span> text!</div>
-// //you can use textContent to get the element's text content:
-
-// let text = document.getElementById('divA').textContent;
-// // The text variable is now: 'This is some text!'
-// // or set the element's text content:
-
-// document.getElementById('divA').textContent = 'This text is different!';
-// // The HTML for divA is now:
-// <div id="divA">This text is different!</div>
-
-
-
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 7 complete - Strider is changed to Aragorn"
@@ -271,14 +220,44 @@ console.log(getStriderInRivendell);
 // ============
 
 
-
 // use console logs instead of alerts, then change them to alerts when submitting
 function forgeTheFellowShip() { 
   console.log("8: forgeTheFellowShip");
+
   // create a new div called `'the-fellowship'` within `rivendell`
-  // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
-  // after each character is added make an alert that they // have joined your party
+
+  const fellowship = document.createElement('div')
   
+  fellowship.id = 'the-fellowship'
+
+  fellowship.innerHTML = 'the-fellowship'
+  
+  const rivendellLocation = document.getElementById('Rivendell')
+
+  
+  rivendellLocation.appendChild(fellowship)
+  // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
+
+  fellowshipLocation = document.getElementById('the-fellowship')
+  console.log(fellowshipLocation)
+
+  const curHobbit = document.getElementsByClassName('hobbits')
+  for(let i = 0; i < curHobbit.length; i++){
+    
+    fellowshipLocation.appendChild(curHobbit[i])
+    
+    // after each character is added make an alert that they // have joined your party
+    alert(`${hobbits[i]} has joined your party!`)  
+  }
+  
+  const curBuddy = document.getElementsByClassName('buddies')
+  for(let i = 0; i < curBuddy.length; i++){
+
+    fellowshipLocation.appendChild(curBuddy[i])
+
+    // after each character is added make an alert that they // have joined your party
+    alert(`${buddies[i]} has joined your party!`)
+  }
   // NOTE: This won't change what you see in the browser.  Use your Elements tab of your Inspector tools to make sure that it worked.
 }
 
@@ -292,7 +271,12 @@ function forgeTheFellowShip() {
 
 function theBalrog() { 
   console.log("9: theBalrog");
+   const gandalf = document.getElementById("the-fellowship")  
    // change the `'Gandalf'` text to `'Gandalf the White'`
+      gandalf.innerHMTL = "Gandalf the White"
+      gandalf.innerText = "Gandalf the White"
+      gandalf.style.background = "white"
+      gandalf.style.border = "3px solid grey"
    // apply the following style to the element, make the // background 'white', add a grey border
 }
 

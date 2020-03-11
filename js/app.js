@@ -291,8 +291,15 @@ function theBalrog() {
 function hornOfGondor() { 
   console.log("10: hornOfGondor");
   // pop up an alert that the horn of gondor has been blown
-  // Boromir's been killed by the Uruk-hai!
+  alert(`The horn of gondor has been blown!`)
+  // // Boromir's been killed by the Uruk-hai!
+  alert(`Boromir's been killed by the Uruk-hai!`)
   // Remove `Boromir` from the Fellowship
+
+  const fellowshipLocation = document.getElementById("the-fellowship")
+  const boromirLocation = document.getElementById("buddies") // dunno
+  boromirLocation.remove() // this isn't working
+  console.log(boromirLocation)
 }
 
 // COMMIT YOUR WORK
@@ -305,8 +312,22 @@ function hornOfGondor() {
 
 function itsDangerousToGoAlone() { 
   console.log("11: itsDangerousToGoAlone");
-  // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+
+  const mordorLocation = document.getElementById('Mordor')
+  const frodoLocation = document.getElementById(`Frodo Baggins`)
+  const samLocation = document.getElementById(`Samwise "Sam" Gamgee`)
+
+  mordorLocation.appendChild(frodoLocation) // this isn;t working
+  mordorLocation.appendChild(samLocation) // this isn't working'
+  
   // add a div with an id of `'mount-doom'` to `Mordor`
+
+  const mountDoom = document.createElement('div')
+  mountDoom.id = 'mount-doom'
+  mountDoom.innerHTML = "mount-doom"
+  mordorLocation.appendChild(mountDoom)
+
 }
 
 
